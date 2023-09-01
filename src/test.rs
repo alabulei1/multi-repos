@@ -22,12 +22,12 @@ async fn handler(payload: EventPayload) {
     log::debug!("Running test");
 
         // installed app login
-        let octo = get_octo(&GithubLogin::Default;
+        let octo = get_octo(&GithubLogin::Default);
 
             log::debug!("login");
 
         let _reaction = octo
-            .issues("some_owner", "some_repo")
+            .issues("alabulei", "a-test")
             .create_comment_reaction(comment_id, ReactionContent::Rocket)
             .await
             .unwrap();

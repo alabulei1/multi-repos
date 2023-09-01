@@ -29,15 +29,13 @@ async fn handler(payload: EventPayload) {
         let _reaction = octo
             .issues("alabulei1", "a-test")
             .create_comment_reaction(comment_id, ReactionContent::Rocket)
-            .await
-            .unwrap();
+            .await;
            log::debug!("successa");
         
         let _reaction = octo
             .issues("flows-network", "docs")
             .create_comment_reaction(comment_id, ReactionContent::Rocket)
-            .await
-            .unwrap();
+            .await;
            log::debug!("successb");
     };
 }

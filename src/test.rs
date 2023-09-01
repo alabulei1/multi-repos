@@ -11,6 +11,7 @@ use github_flows::{
 pub async fn on_deploy() {
     // `some_login` must be authed in flows.network
     listen_to_event(&GithubLogin::Default, "alabulei1", "a-test", vec!["issue_comment"]).await;
+    listen_to_event(&GithubLogin::Default, "flows-network", "docs", vec!["issue_comment"]).await;
 }
 
 #[event_handler]
@@ -30,6 +31,13 @@ async fn handler(payload: EventPayload) {
             .create_comment_reaction(comment_id, ReactionContent::Rocket)
             .await
             .unwrap();
-           log::debug!("success");
+           log::debug!("successa");
+        
+        let _reaction = octo
+            .issues("flows-network", "docs")
+            .create_comment_reaction(comment_id, ReactionContent::Rocket)
+            .await
+            .unwrap();
+           log::debug!("successb");
     };
 }

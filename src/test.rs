@@ -26,7 +26,7 @@ async fn handler(payload: EventPayload) {
             log::debug!("login");
 
         let _reaction = octo
-            .issues("alabulei", "a-test")
+            .issues("alabulei1", "a-test")
             .create_comment_reaction(comment_id, ReactionContent::Rocket)
             .await
             .unwrap();
